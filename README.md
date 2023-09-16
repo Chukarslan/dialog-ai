@@ -1,7 +1,5 @@
 # AI-Powered Conversational Application 🤖💬
 
-![Logo](/img/logo.PNG) 
-
 Welcome to the AI-Powered Conversational Application repository! Visit our website at [DialogueAI](http://dialogueai.co/) for more information.
 
 ![Demo Phone Number](/img/demo-phone.PNG)
@@ -48,6 +46,7 @@ cd dialogue-ai
 ### QR Code
 
 Scan the QR code below to visit our website:
+
 ![qr](/img/qr.PNG)
 
 ### Contributing
