@@ -1,25 +1,28 @@
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
+import path from 'path';
+import { fileURLToPath } from 'url'
 
-const path = require('path');
+import dotenv from 'dotenv';
 
-const dotenv = require('dotenv');
-// Import required bot configuration.
-const ENV_FILE = path.join(__dirname, '.env');
-dotenv.config({ path: ENV_FILE });
-
-const restify = require('restify');
+import restify from 'restify';
 
 // Import required bot services.
 // See https://aka.ms/bot-services to learn more about the different parts of a bot.
-const {
+import {
     CloudAdapter,
     ConfigurationServiceClientCredentialFactory,
     createBotFrameworkAuthenticationFromConfiguration
-} = require('botbuilder');
+} from 'botbuilder';
 
 // This bot's main dialog.
-const { EchoBot } = require('./bot');
+import DialogueBot from './bot.js';
+// Import required bot configuration.
+const __filename = fileURLToPath(import.meta.url);
+
+const __dirname = path.dirname(__filename);
+const ENV_FILE = path.join(__dirname, '.env');
+dotenv.config({ path: ENV_FILE });
 
 // Create HTTP server
 const server = restify.createServer();
@@ -68,7 +71,7 @@ const onTurnErrorHandler = async (context, error) => {
 adapter.onTurnError = onTurnErrorHandler;
 
 // Create the main dialog.
-const myBot = new EchoBot();
+const myBot = new DialogueBot();
 
 // Listen for incoming requests.
 server.post('/api/messages', async (req, res) => {

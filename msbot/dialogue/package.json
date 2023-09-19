@@ -4,6 +4,7 @@
     "description": "Connect to OpenAI API and simulate conversation with ChatGPT",
     "author": "Generated using Microsoft Bot Builder Yeoman generator v4.17.0",
     "license": "MIT",
+    "type": "module",
     "main": "index.js",
     "scripts": {
         "start": "node ./index.js",
@@ -17,10 +18,15 @@
     },
     "dependencies": {
         "botbuilder": "~4.15.0",
+        "d3-dsv": "^2.0.0",
         "dotenv": "~8.2.0",
+        "langchain": "^0.0.150",
         "openai": "^4.7.1",
-        "restify": "~8.5.1",
-        "stream-json": "^1.8.0"
+        "restify": "^11.1.0",
+        "sbd": "^1.0.19",
+        "sqlite3": "^5.1.6",
+        "stream-json": "^1.8.0",
+        "typeorm": "^0.3.17"
     },
     "devDependencies": {
         "eslint": "^7.0.0",
